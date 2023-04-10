@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Generador de Contraseñas</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+  </head>
+  <body>
+    <h1>Generador de Contraseñas</h1>
+    <form action="/home/password" method="POST">
+      <label for="length">Longitud de la contraseña:</label>
+      <input type="range" id="length" name="length" required min="1" max="30">
+      <span id="length-value">1</span>
+      <button type="submit">Generar Contraseña</button>
+      
+    </form>
+
+    <script>
+      const lengthRange = document.getElementById('length');
+      const lengthValue = document.getElementById('length-value');
+
+      lengthRange.addEventListener('input', () => {
+        lengthValue.textContent = lengthRange.value;
+      });
+
+      
+    </script>
+  </body>
+</html>
